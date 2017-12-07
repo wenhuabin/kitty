@@ -33,9 +33,9 @@
 	symbol.test(tmp) && result ++;
 	
 	if(pwdReg.test(tmp) && result >=2){
-		return true;
+        return true;
 	}else{
-		return false;
+        return false;
 	}
 
 #### 匹配Email
