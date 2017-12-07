@@ -22,21 +22,25 @@
 
 #### 验证密码：长度为8-20位，包含字母、数字、字符任意两种及以上组合
 
-	let pwdReg = /^\S\S{6,18}\S$/;
-	let lowCase = /^\S*[a-z]\S*$/;
-	let upperCase = /^\S*[A-Z]\S*$/;
-	let number = /^\S*[0-9]\S*$/;
-	let symbol = /[`~!@#$%^&*\(\)\_\+\-\=\[\]\\\{\}|;':",./<>?]$/;
-	lowCase.test(tmp) && result ++;
-	upperCase.test(tmp) && result ++;
-	number.test(tmp) && result ++;
-	symbol.test(tmp) && result ++;
-	
-	if(pwdReg.test(tmp) && result >=2){
-        return true;
-	}else{
-        return false;
-	}
+```js
+
+let pwdReg = /^\S\S{6,18}\S$/;
+let lowCase = /^\S*[a-z]\S*$/;
+let upperCase = /^\S*[A-Z]\S*$/;
+let number = /^\S*[0-9]\S*$/;
+let symbol = /[`~!@#$%^&*\(\)\_\+\-\=\[\]\\\{\}|;':",./<>?]$/;
+lowCase.test(tmp) && result ++;
+upperCase.test(tmp) && result ++;
+number.test(tmp) && result ++;
+symbol.test(tmp) && result ++;
+
+if(pwdReg.test(tmp) && result >=2){
+    return true;
+}else{
+    return false;
+}
+
+```
 
 #### 匹配Email
 
