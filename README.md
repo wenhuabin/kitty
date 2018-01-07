@@ -19,7 +19,7 @@
 ### node
 
 
-3、note  -> node 相关代码
+3、node  -> node 相关代码
 
 
 ### 第三方 JS 库
