@@ -9,7 +9,7 @@ function tnextick(){
 	});
 	
 	setTimeout(function timeout() {
-	  console.log('TIMEOUT FIRED');
+	  console.log('TIMEOUT FIRED - nexttick');
 	}, 0)
 }
 
@@ -30,7 +30,7 @@ function tinmediate(){
 	});
 	
 	setTimeout(function timeout() {
-	  console.log('TIMEOUT FIRED');
+	  console.log('TIMEOUT FIRED - tinmediate');
 	}, 0);
 }
 
@@ -44,8 +44,8 @@ TIMEOUT FIRED
 /*注意，上述执行结果为单独执行其中一个函数得出的结果，上述顺序执行的结果为：
 1
 2
-TIMEOUT FIRED
-TIMEOUT FIRED
+TIMEOUT FIRED - nexttick
+TIMEOUT FIRED - tinmediate
 1
 2
 */
