@@ -13,7 +13,7 @@ function tnextick(){
 	}, 0)
 }
 
-//tnextick();
+tnextick();
 /*result
  1
  2
@@ -41,7 +41,7 @@ TIMEOUT FIRED
 2
 */
 
-/*注意，上述执行结果为单独执行其中一个函数得出的结果，同时执行的结果为：
+/*注意，上述执行结果为单独执行其中一个函数得出的结果，上述顺序执行的结果为：
 1
 2
 TIMEOUT FIRED
