@@ -25,8 +25,8 @@ setImmediate方法则是在当前"任务队列"的尾部添加事件，也就是
 */
 function tinmediate(){
 	setImmediate(function A() {
-	  console.log(1);
-	  setImmediate(function B(){console.log(2);});
+	  console.log(11);
+	  setImmediate(function B(){console.log(12);});
 	});
 	
 	setTimeout(function timeout() {
@@ -46,7 +46,7 @@ TIMEOUT FIRED
 2
 TIMEOUT FIRED - nexttick
 TIMEOUT FIRED - tinmediate
-1
-2
+11
+12
 */
 
