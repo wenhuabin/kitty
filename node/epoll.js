@@ -58,9 +58,10 @@ EPOLLONESHOT：只监听一次事件，当监听完这次事件之后，如果�
 */
 
 //添加事件
+//(epollfd,listenfd,EPOLLIN);
 static void add_event(int epollfd,int fd,int state){
     struct epoll_event ev;
-    ev.events = state;
+    ev.events = state; //state: EPOLLIN, 表示对应的文件描述符可以读 
     ev.data.fd = fd;
     epoll_ctl(epollfd,EPOLL_CTL_ADD,fd,&ev);
 }
