@@ -55,6 +55,9 @@ var precacheConfig = [
         })
       : Promise.resolve(e);
   },
+  //e: url, a: hashname, n: hash, t: 0 ? 暂时不知什么意思
+  //url.search: 获取?之后的所有参数，如果没有，则为 ""
+  // || 右侧的结果：url + "& or without &" + hashParamName + '=' + hashNameOfFile
   createCacheKey = function(e, a, n, t) {
     var r = new URL(e);
     return (t && r.pathname.match(t)) ||
@@ -105,6 +108,7 @@ self.addEventListener("install", function(e) {
       .open(cacheName)
       .then(function(e) {
         return setOfCachedUrls(e).then(function(a) {
+		  //请求所有需要缓存的文件
           return Promise.all(
             Array.from(urlsToCacheKeys.values()).map(function(n) {
               if (!a.has(n)) {
@@ -130,7 +134,9 @@ self.addEventListener("install", function(e) {
         return self.skipWaiting();
       })
   );
-}), self.addEventListener("activate", function(e) {
+}), 
+
+self.addEventListener("activate", function(e) {
   var a = new Set(urlsToCacheKeys.values());
   e.waitUntil(
     caches
@@ -148,7 +154,10 @@ self.addEventListener("install", function(e) {
         return self.clients.claim();
       })
   );
-}), self.addEventListener("fetch", function(e) {
+}), 
+
+
+self.addEventListener("fetch", function(e) {
   if ("GET" === e.request.method) {
     var a,
       n = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);
