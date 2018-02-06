@@ -102,6 +102,8 @@ var precacheConfig = [
       return [t.toString(), r];
     })
   );
+
+
 self.addEventListener("install", function(e) {
   e.waitUntil(
     caches
@@ -136,6 +138,7 @@ self.addEventListener("install", function(e) {
   );
 }), 
 
+
 self.addEventListener("activate", function(e) {
   var a = new Set(urlsToCacheKeys.values());
   e.waitUntil(
@@ -162,6 +165,7 @@ self.addEventListener("fetch", function(e) {
     var a,
       n = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);
 	//这里是这么写的原因是如果找到了 a 就不执行后面那个括号里面的查找和赋值了
+	//addDirectoryIndex：添加根目录 index.html, 但是因为不存在 index.html，因为是 vue.html，所以肯定会失败
     (a = urlsToCacheKeys.has(n)) ||
       ((n = addDirectoryIndex(n, "index.html")), (a = urlsToCacheKeys.has(n)));
     a &&
