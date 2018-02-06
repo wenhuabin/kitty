@@ -161,7 +161,7 @@ self.addEventListener("fetch", function(e) {
   if ("GET" === e.request.method) {
     var a,
       n = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);
-	//这里是这么写的原因是如果找到了 a 就不执行后面那个括号里面的数据了
+	//这里是这么写的原因是如果找到了 a 就不执行后面那个括号里面的查找和赋值了
     (a = urlsToCacheKeys.has(n)) ||
       ((n = addDirectoryIndex(n, "index.html")), (a = urlsToCacheKeys.has(n)));
     a &&
