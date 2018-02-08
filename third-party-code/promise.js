@@ -24,3 +24,16 @@ getJSON('story.json').then(function(story) {
   // Always hide the spinner
   document.querySelector('.spinner').style.display = 'none';
 })
+
+var generatorPromise = function(num) {
+   return new Promise((res) => {
+		setTimeout(function(){
+			res();
+			console.log(num);
+		}, 1000));
+}
+
+var end = Promise.resolve();
+for (let i = 0; i < 5; i++) {
+  end = end.then(() => generatorPromise(i) );
+}
