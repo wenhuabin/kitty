@@ -4,7 +4,7 @@
 - regex: 常用的正则表达式
 - node: node 相关代码
 - third-party-code: 第三方代码库代码 
-- notes -> 总结
+- notes: 总结
 
 #### 第三方代码说明
 
