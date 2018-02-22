@@ -12,14 +12,14 @@ var obj = new Proxy({}, {
 
 obj.count = 1
 //output
-    setting count!
-1
+//    setting count!
+//1
 //output
 ++ obj.count
 //output
- getting count!
- setting count!
-2
+// getting count!
+// setting count!
+//2
 //output
 
 
