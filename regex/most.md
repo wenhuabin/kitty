@@ -91,13 +91,13 @@ if(pwdReg.test(tmp) && result >=2){
 
 #### 连字符改为驼峰写法
 
-> str.replace(/\-(\w)/g, function(all, item){
+> str.replace(/\-(\w)/g, function(item){
 >     return item.toUpperCase();
 > })
 
 #### 驼峰写法改成连字符
 
-> str.replace(/([A-Z])/g, function(all, item){
+> str.replace(/([A-Z])/g, function(item){
 >     return '-' + item.toLowerCase;
 > })
 
