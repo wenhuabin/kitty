@@ -102,3 +102,17 @@ if(pwdReg.test(tmp) && result >=2){
 > })
 
 > str.replace(/([A-Z])/g, '-$1').toLowerCase()
+
+#### Escape HTML
+
+> const map = {
+>   '&': '&amp;',
+>   '<': '&lt;',
+>   '>': '&gt;',
+>   '"': '&quot;',
+>   "'": '&#039;'
+> };
+> 
+> text.replace(/[<>&"']/g, function(m){
+>     return map[m];
+> })
