@@ -1,3 +1,6 @@
+//V8 引擎 sort 函数只给出了两种排序分别是： InsertionSort 和 QuickSort，数组长度小于等于 10 的用插入排序 InsertionSort，比10大的数组则使用快速排序 QuickSort 
+
+
 function swap(arr, i, j){
     let tmp = undefined;
     if(Array.isArray(arr) && i <= arr.length && i >= 0 && j <= arr.length && j >= 0){ 
