@@ -7,12 +7,13 @@ function swap(arr, i, j){
     }
 }
 
+//swap every time
 function insertSort(arr){
     if(!Array.isArray(arr)){
         return;
     }
     for(let i=1; i<arr.length; i++){
-        for(let j=i; j>=0; j--){
+        for(let j=i; j>0; j--){
             if(arr[j] < arr[j-1]){
                 swap(arr, j, j-1);
             }else{
@@ -22,9 +23,28 @@ function insertSort(arr){
     }
 }
 
+//先做移动，再讲 arr[i] 直接放入对应位置
+function insertSortO(arr){
+    if(!Array.isArray(arr)){
+        return;
+    }
+    for(let i=1; i<arr.length; i++){
+        let tmp = arr[i];
+        for(let j=i; j>=0; j--){
+            //确保 j-1 不会溢出
+            if(j > 0 && tmp < arr[j-1]){
+                arr[j] = arr[j-1];
+            }else{
+                arr[j] = tmp;
+                break;
+            }
+        }
+    }
+}
 
-let arr = [3,2,1];
-insertSort(arr);
+let arr = [3,2,8,10,1];
+//insertSort(arr);
+insertSortO(arr);
 console.log(arr);
 
 
