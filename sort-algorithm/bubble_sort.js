@@ -8,19 +8,17 @@ function swap(arr, i, j){
 }
 
 
-function selectSort(arr){
+function bubbleSort(arr){
     for(let i=0; i<arr.length; i++){
-        let index = i;
         for(let j=i+1; j<arr.length; j++){
-            if(arr[j] < arr[index]){
-                index = j;
+            if(arr[j] < arr[i]){
+                swap(arr, i, j);
             }
         }
-        i != index && swap(arr, i, index);
     }
 }
 
 
 let arr = [3,2,8,10,1];
-selectSort(arr);
+bubbleSort(arr);
 console.log(arr);
