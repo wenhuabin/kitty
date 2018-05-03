@@ -26,7 +26,7 @@ function insertSort(arr){
     }
 }
 
-//先做移动，再讲 arr[i] 直接放入对应位置
+//先做移动，再将 arr[i] 直接放入对应位置
 function insertSortO(arr){
     if(!Array.isArray(arr)){
         return;
