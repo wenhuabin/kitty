@@ -1,0 +1,6 @@
+JS Array.sort() 的具体实现
+
+
+V8：长度小于 22 的用插入排序，大于 22 的用快速排序
+Firefox：归并排序
+Webkit：底层用了 C++ 的 qsort 算法
