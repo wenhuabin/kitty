@@ -1,5 +1,11 @@
-JS Array.sort() 的具体实现
+### 算法分类
 
+- sort-search: 常用的排序算法和查找算法 JS 实现
+- other: 其他算法 JS 实现
+
+Tips:
+
+JS Array.sort() 的具体实现
 
 V8：长度小于 22 的用插入排序，大于 22 的用快速排序
 Firefox：归并排序
