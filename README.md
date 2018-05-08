@@ -5,6 +5,7 @@
 - node: node 相关代码
 - third-party-code: 第三方代码库代码 
 - notes: 总结
+- algorithm: 基础排序算法、二分查找、KMP 算法
 
 #### 第三方代码说明
 
